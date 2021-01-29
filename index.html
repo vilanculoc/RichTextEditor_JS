@@ -1,5 +1,7 @@
 <head>
     <script src="https://use.fontawesome.com/a5a9773444.js"></script>
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <script type="text/javascript" src="main.js"></script>
 </head>
 <body onload="InitEditable ();">
@@ -25,7 +27,7 @@
     <button id="insertOrderedList" onclick="execCmd (this.id);"><i class="fa fa-list-ol"></i></button>
     <button id="insertParagraph" onclick="execCmd (this.id);"><i class="fa fa-paragraph"></i></button>
 
-    <select>
+    <select onchange ="execCmdWithArg('formatBlock',this.value)">
         <option value="H1">H1</option>
         <option value="H2">H2</option>
         <option value="H3">H3</option>
@@ -35,15 +37,15 @@
     </select>
 
     <button id="insertHorizontalRule" onclick="execCmd (this.id);">HR</i></button>
-    <button id="" onclick="execCmd (this.id);"><i class="fa fa-link"></i></button>
+    <button id="createlink" onclick ="execCmdWithArg('createlink', prompt('Enter the URL: http:',''))"><i class="fa fa-link"></i></button>
     <button id="unlink" onclick="execCmd (this.id);"><i class="fa fa-unlink"></i></button>
-    <button id="" onclick="execCmd (this.id);"><i class="fa fa-code"></i></button>
+    <button onclick="toggleSource();"><i class="fa fa-code"></i></button>
     <button id="" onclick="execCmd (this.id);">Togle Edit</button>
 
     <br>
     <br>
-
-    <select>
+     <!--Fonte Famile-->
+    <select onchange ="execCmdWithArg('fontName', this.value)">
         <option value="Arial">Arial</option>
         <option value="comic">comic Scans Ms</option>
         <option value="courier">courier</option>
@@ -53,7 +55,8 @@
         <option value="Verdana">Verdana</option>
     </select>
 
-    <select>
+    <!--Fonte size-->
+    <select onchange ="execCmdWithArg('fontSize', this.value)">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -63,14 +66,15 @@
         <option value="7">7</option>
     </select>
 
-    Fore color:<input type="color"/>
-    Beground: <input type="color"/>
-    <button onclick="execCmd (this.id);"><i class="fa fa-file-image-o"></i></button>
+    Fore color:<input type="color" onchange ="execCmdWithArg('foreColor',this.value)"/>
+    Beground: <input type="color" onchange ="execCmdWithArg('hiliteColor',this.value)"/>
+    <button onclick ="execCmdWithArg('insertImage', prompt('Enter the image url',''))"><i class="fa fa-file-image-o"></i></button>
     <button id="selectAll" onclick="execCmd (this.id);">Select All</button>
 
     <br>
     <br>
 
 </div>
-    <iframe id="editor" style="width: 1000px; height: 500px;"></iframe>
+    <iframe id="editorField" style="width: 1000px; height: 500px;"></iframe>
+    <p id="test"></p>
 </body>
