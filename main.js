@@ -45,3 +45,34 @@
             editorDoc.execCommand (y, false, z);
 
         }
+
+
+        function changeSelectedItem(identifire){
+            var chooser =identifire;
+            document.getElementById('test').innerHTML=chooser;
+            if (chooser=='file'){
+                document.getElementById("home").classList.remove("selected");
+                document.getElementById("home").classList.add("nonSelected");
+                document.getElementById("insert").classList.remove("selected");
+                document.getElementById("insert").classList.add("nonSelected");
+                document.getElementById("file").classList.remove("nonSelected");
+                document.getElementById("file").classList.add("selected");
+            }
+            else if (chooser=='insert'){
+                document.getElementById("home").classList.remove("selected");
+                document.getElementById("home").classList.add("nonSelected");
+                document.getElementById("file").classList.remove("selected");
+                document.getElementById("file").classList.add("nonSelected");
+                document.getElementById("insert").classList.remove("nonSelected");
+                document.getElementById("insert").classList.add("selected");
+            }
+            else if (chooser=='home'){
+                document.getElementById("file").classList.remove("selected");
+                document.getElementById("file").classList.add("nonSelected");
+                document.getElementById("insert").classList.remove("selected");
+                document.getElementById("insert").classList.add("nonSelected");
+                document.getElementById("home").classList.remove("nonSelected");
+                document.getElementById("home").classList.add("selected");
+            } 
+            
+        }

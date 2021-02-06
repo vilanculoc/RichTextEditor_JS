@@ -8,34 +8,41 @@
 <nav>
 <div id="menus">
      <ul>
-         <li class="nonSelected" onclick="changeSelectedItem" ><a active="active" href="#">File</a></li>
-         <li><a class="selected" href="#">Home</a></li>
-         <li class="nonSelected"><a href="#">Insert</a></li>
+         <li id="file"class="nonSelected" onclick="changeSelectedItem(this.id)" ><a href="#">File</a></li>
+         <li id ="home" class="selected" onclick="changeSelectedItem(this.id)"><a href="#">Home</a></li>
+         <li id="insert" class="nonSelected" onclick="changeSelectedItem(this.id)"><a href="#">Insert</a></li>
      </ul>
  </div>  
 </nav> 
 
 <div>
+
+    <button id="undo" onclick="execCmd (this.id);"><i class="fa fa-undo"></i></button>
+    <button id="redo" class="separation" onclick="execCmd (this.id);"><i class="fa fa-repeat"></i></button>
+
     <button id="bold" onclick="execCmd(this.id);"><i class="fa fa-bold"></i></button>
     <button id="italic" onclick="execCmd(this.id);"><i class="fa fa-italic"></i></button>
     <button id="underline"  onclick="execCmd (this.id);"><i class="fa fa-underline"></i></button>
     <button id="strikeThrough" onclick="execCmd (this.id);"><i class="fa fa-strikethrough"></i></button>
+    <button id="subscript" onclick="execCmd (this.id);"><i class="fa fa-subscript"></i></button>
+    <button id="superscript" class="separation" onclick="execCmd (this.id);"><i class="fa fa-superscript"></i></button>
+
     <button id="justifyLeft" onclick="execCmd (this.id);"><i class="fa fa-align-left"></i></button>
     <button id="justifyRight" onclick="execCmd (this.id);"><i class="fa fa-align-right"></i></button>
     <button id="justifyCenter" onclick="execCmd (this.id);"><i class="fa fa-align-center"></i></button>
-    <button id="justifyFull" onclick="execCmd (this.id);"><i class="fa fa-align-justify"></i></button>
-    <button id="subscript" onclick="execCmd (this.id);"><i class="fa fa-subscript"></i></button>
-    <button id="superscript" onclick="execCmd (this.id);"><i class="fa fa-superscript"></i></button>
+    <button id="justifyFull" class="separation" onclick="execCmd (this.id);"><i class="fa fa-align-justify"></i></button>
+    
     <button id="indent" onclick="execCmd(this.id);"><i class="fa fa-indent"></i></button>
     <button id="outdent" onclick="execCmd(this.id);"><i class="fa fa-dedent"></i></button>
+    <button id="insertUnorderedList" onclick="execCmd (this.id);"><i class="fa fa-list-ul"></i></button>
+    <button id="insertOrderedList" onclick="execCmd (this.id);"><i class="fa fa-list-ol"></i></button>
+    <button id="insertParagraph" class="separation" onclick="execCmd (this.id);"><i class="fa fa-paragraph"></i></button>
+
     <button id="copy" onclick="execCmd (this.id);"><i class="fa fa-copy"></i></button>
     <button id="cut" onclick="execCmd (this.id);"><i class="fa fa-cut"></i></button>
     <button id="save" onclick="execCmd (this.id);"><i class="fa fa-save"></i></button>
-    <button id="undo" onclick="execCmd (this.id);"><i class="fa fa-undo"></i></button>
-    <button id="redo" onclick="execCmd (this.id);"><i class="fa fa-repeat"></i></button>
-    <button id="insertUnorderedList" onclick="execCmd (this.id);"><i class="fa fa-list-ul"></i></button>
-    <button id="insertOrderedList" onclick="execCmd (this.id);"><i class="fa fa-list-ol"></i></button>
-    <button id="insertParagraph" onclick="execCmd (this.id);"><i class="fa fa-paragraph"></i></button>
+    
+
 
     <select onchange ="execCmdWithArg('formatBlock',this.value)">
         <option value="H1">H1</option>
