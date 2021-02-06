@@ -1,10 +1,20 @@
 <head>
     <script src="https://use.fontawesome.com/a5a9773444.js"></script>
-    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
     <script type="text/javascript" src="main.js"></script>
 </head>
 <body onload="InitEditable ();">
+
+<nav>
+<div id="menus">
+     <ul>
+         <li class="nonSelected" onclick="changeSelectedItem" ><a active="active" href="#">File</a></li>
+         <li><a class="selected" href="#">Home</a></li>
+         <li class="nonSelected"><a href="#">Insert</a></li>
+     </ul>
+ </div>  
+</nav> 
+
 <div>
     <button id="bold" onclick="execCmd(this.id);"><i class="fa fa-bold"></i></button>
     <button id="italic" onclick="execCmd(this.id);"><i class="fa fa-italic"></i></button>

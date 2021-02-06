@@ -1,0 +1,54 @@
+*{
+padding:0px;
+margin: 0px;
+}
+
+body{
+	font-size: 18;
+}
+
+.nonSelected{	
+	border-bottom: 1px solid rgb(224, 214, 214);
+}
+
+.selected{
+	border: 1px solid rgb(224, 214, 214);
+	border-bottom: none;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  /*background-color: #333;*/
+  
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: #111;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: rgb(61, 58, 58);
+}
+
+
+button{
+	border:none;
+	background-color: #fff;
+}
+
+
+
+#menus{
+
+}
